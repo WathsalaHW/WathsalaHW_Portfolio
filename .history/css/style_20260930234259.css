@@ -20,9 +20,6 @@
 html {
     font-size: 62.5%;
     overflow-x: hidden;
-    scroll-behavior: smooth;
-    /* Offsets navigation so fixed header does not cover section headings */
-    scroll-padding-top: 8rem;
 }
 body {
     background: var(--bg-color);
@@ -152,7 +149,6 @@ span {
     text-align: center;
     font-size: 4.5rem;
     margin-top: 0;
-    margin-bottom: 4rem;
     padding-bottom: 2rem; /* Reduced from 6rem to close the gap */
 }
 

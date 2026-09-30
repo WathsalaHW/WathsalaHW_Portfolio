@@ -20,9 +20,6 @@
 html {
     font-size: 62.5%;
     overflow-x: hidden;
-    scroll-behavior: smooth;
-    /* Offsets navigation so fixed header does not cover section headings */
-    scroll-padding-top: 8rem;
 }
 body {
     background: var(--bg-color);
@@ -152,7 +149,6 @@ span {
     text-align: center;
     font-size: 4.5rem;
     margin-top: 0;
-    margin-bottom: 4rem;
     padding-bottom: 2rem; /* Reduced from 6rem to close the gap */
 }
 
@@ -611,7 +607,7 @@ span {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: .15rem;
-    color: #08e0e7; /* Accent color matching reference or use var(--main-color) */
+    color: #ff3366; /* Accent color matching reference or use var(--main-color) */
     margin-bottom: .8rem;
 }
 
@@ -678,14 +674,14 @@ span {
 
 /* Primary Button (Crimson / Pink like reference) */
 .proj-btn.primary {
-    background: #1d9ab3;
+    background: #552aff;
     color: #fff;
     box-shadow: 0 0 1.2rem rgba(49, 44, 45, 0.4);
 }
 
 .proj-btn.primary:hover {
-    background: #1ecde0;
-    box-shadow: 0 0 1.8rem rgba(22, 17, 18, 0.6);
+    background: #e01e50;
+    box-shadow: 0 0 1.8rem rgba(255, 42, 95, 0.6);
 }
 
 /* Secondary Button (Ghost outline) */

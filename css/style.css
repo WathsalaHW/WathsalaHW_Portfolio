@@ -10,6 +10,7 @@
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
 }
+
 :root {
     --bg-color: #010814;
     --second-bg-color: #010814;
@@ -17,20 +18,22 @@
     --main-color: #0ef;
     --box-color: rgb(14, 0, 74);
 }
+
 html {
     font-size: 62.5%;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    /* Offsets navigation so fixed header does not cover section headings */
-    scroll-padding-top: 8rem;
+    scroll-padding-top: 7.5rem;
 }
+
 body {
     background: var(--bg-color);
     color: var(--text-color);
 }
+
 section {
     min-height: 100vh;
-    padding: 10rem 9% 2rem;
+    padding: 5rem 9% 4rem;
 }
 
 .header {
@@ -44,21 +47,25 @@ section {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-} 
-.header.sticky {
-    border-bottom: .1rem solid rgba(0,0,0,.2);
 }
+
+.header.sticky {
+    border-bottom: .1rem solid rgba(0, 0, 0, .2);
+}
+
 .logo {
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
     cursor: default;
 }
+
 .navbar a {
     font-size: 1.7rem;
     color: var(--text-color);
     margin-left: 4rem;
 }
+
 .navbar a:hover,
 .navbar a.active {
     color: var(--main-color);
@@ -76,11 +83,13 @@ section {
     justify-content: center;
     align-items: center;
 }
+
 .home-img img {
     width: 28vw;
     animation: floatImage 4s ease-in-out infinite;
     border-radius: 50%;
 }
+
 @keyframes floatImage {
     0% {
         transform: translateY(0);
@@ -97,9 +106,11 @@ section {
     font-size: 3.2rem;
     font-weight: 700;
 }
+
 .home-content h3:nth-of-type(2) {
     margin-bottom: 2em;
 }
+
 span {
     color: var(--main-color);
 }
@@ -109,9 +120,11 @@ span {
     font-weight: 700;
     line-height: 1.3;
 }
+
 .home-content p {
     font-size: 1.6rem;
 }
+
 .social-media a {
     display: inline-flex;
     justify-content: center;
@@ -126,11 +139,13 @@ span {
     margin: 3rem 1.5rem 3rem 0;
     transition: .5s ease;
 }
+
 .social-media a:hover {
     background: var(--main-color);
     color: var(--second-bg-color);
     box-shadow: 0 0 1rem var(--main-color);
 }
+
 .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
@@ -143,6 +158,7 @@ span {
     font-weight: 600;
     transition: .5s ease;
 }
+
 .btn:hover {
     box-shadow: none;
 }
@@ -153,7 +169,7 @@ span {
     font-size: 4.5rem;
     margin-top: 0;
     margin-bottom: 4rem;
-    padding-bottom: 2rem; /* Reduced from 6rem to close the gap */
+    padding-bottom: 2rem;
 }
 
 /* About Section */
@@ -163,8 +179,8 @@ span {
     justify-content: center;
     align-items: center;
     background: var(--second-bg-color);
-    min-height: auto;       /* Prevents empty vertical dead space */
-    padding: 8rem 9% 6rem;
+    min-height: auto;
+    padding: 5rem 9% 6rem;
 }
 
 .about-full-container {
@@ -275,9 +291,14 @@ span {
 }
 
 /* Services / Education */
-.services h2 {
-    margin-top: 5rem;
+.services {
+    padding: 5rem 9% 0;
 }
+
+.services h2 {
+    margin-top: 0;
+}
+
 .services-container {
     display: flex;
     justify-content: center;
@@ -286,6 +307,7 @@ span {
     gap: 3rem;
     padding: .5rem 4rem 5rem;
 }
+
 .services-container .services-box {
     flex: 1 1 30rem;
     background: var(--second-bg-color);
@@ -295,254 +317,157 @@ span {
     border: .2rem solid var(--bg-color);
     transition: .5s ease;
     box-shadow: 0 0 3rem var(--box-color);
-
     display: flex;
     flex-direction: column;
 }
+
 .services-box .btn {
     margin-top: auto;
-    align-self: center; /* Keeps the button centered horizontally */
+    align-self: center;
 }
+
 .services-container .services-box:hover {
     border-color: var(--main-color);
     transform: scale(1.02);
 }
+
 .services-box i {
     font-size: 7rem;
     color: var(--main-color);
 }
+
 .services-box h3 {
     font-size: 2.6rem;
 }
+
 .services-box p {
     font-size: 1.6rem;
     margin: 1rem 0 3rem;
 }
 
-/* Percentage bars / Skills */
-.section10 {
-    display: flex;
-    margin-top: -40px;
+/* =========================================
+   Skills Section (Clean Categorized Cards)
+   ========================================= */
+.skills-section {
+    background: var(--second-bg-color);
+    padding: 5rem 9% 6rem;
+    min-height: auto;
 }
 
-.container1 {
-    width: 600px;
-    height: 500px;
-    padding: 0px 90px;
+.skills-grid {
+    max-width: 1100px;
+    margin: 0 auto 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
 }
-.heading1 {
-    text-align: center;
-    text-decoration: underline;
-    text-underline-offset: 10px;
-    text-decoration-thickness: 5px;
-    margin-bottom: 50px;
+
+.skill-category-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: .15rem solid rgba(0, 238, 255, 0.2);
+    border-radius: 1.6rem;
+    padding: 2.2rem 2rem;
+    text-align: left;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
-.bar {
-    font-size: 23px;
+
+.skill-category-card:hover {
+    border-color: var(--main-color);
+    transform: translateY(-4px);
+    box-shadow: 0 0 2rem rgba(0, 238, 255, 0.18);
 }
-.Technical-bars .bar {
-    margin: 40px 0;
+
+.skill-cat-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.8rem;
+    padding-bottom: 1.2rem;
+    border-bottom: .1rem solid rgba(255, 255, 255, 0.08);
 }
-.Technical-bars .bar:first-child {
-    margin-top: 0;
+
+.skill-cat-header i {
+    font-size: 2.6rem;
+    color: var(--main-color);
 }
-.Technical-bars .bar:last-child {
-    margin-bottom: 0;
+
+.skill-cat-header h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
 }
-.Technical-bars .bar .info {
-    margin-bottom: 5px;
+
+.skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
 }
-.Technical-bars .bar .info span {
-    font-size: 17px;
+
+.skill-pills span {
+    font-size: 1.35rem;
     font-weight: 500;
-    animation: showText 0.5s 1s linear forwards;
-    opacity: 0;
+    color: #e2e8f0;
+    background: rgba(0, 238, 255, 0.07);
+    border: .1rem solid rgba(0, 238, 255, 0.25);
+    padding: 0.6rem 1.3rem;
+    border-radius: 0.8rem;
+    transition: background 0.25s ease, border-color 0.25s ease;
 }
-.Technical-bars .bar .progress-line {
-    position: relative;
-    border-radius: 10px;
-    width: 100%;
-    height: 5px;
-    background-color: black;
-    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
-    transform: scaleX(0);
-    transform-origin: left;
-}
-@keyframes animate {
-    100% {
-        transform: scaleX(1);
-    }
-}
-.Technical-bars .bar .progress-line span {
-    height: 100%;
-    background-color: var(--main-color);
-    position: absolute;
-    border-radius: 10px;
-    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
-    transform: scaleX(0);
-    transform-origin: left;
-}
-.progress-line.html span {
-    width: 90%;
-}
-.progress-line.css span {
-    width: 60%;
-}
-.progress-line.Javascript span {
-    width: 85%;
-}
-.progress-line.python span {
-    width: 50%;
-}
-.progress-line.react span {
-    width: 75%;
-}
-.progress-line span::after {
-    position: absolute;
-    padding: 1px 8px;
-    background-color: #000;
+
+.skill-pills span:hover {
+    background: rgba(0, 238, 255, 0.18);
+    border-color: var(--main-color);
     color: #fff;
-    font-size: 12px;
-    border-radius: 3px;
-    top: -28px;
-    right: -20px;
-    animation: showText 0.5s 1.5s linear forwards;
-    opacity: 0;
-}
-.progress-line.html span::after {
-    content: "90%";
-}
-.progress-line.css span::after {
-    content: "60%";
-}
-.progress-line.Javascript span::after {
-    content: "85%";
-}
-.progress-line.python span::after {
-    content: "90%";
-}
-.progress-line.react span::after {
-    content: "90%";
-}
-.progress-line.react span::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border: 7px solid transparent;
-    border-bottom-width: 0px;
-    border-right-width: 0px;
-    border-top-color: #000;
-    top: -10px;
-    right: 0;
-    animation: showText 0.5s 1.5s linear forwards;
-    opacity: 0;
-}
-@keyframes showText {
-    100% {
-        opacity: 1;
-    }
-}
-.radial-bars {
-    width: 100%;
-    display: flex;
-    height: 170px;
-    margin-bottom: 10px;
-    position: relative;
-}
-.circles {
-    display: flex;
-}
-.radial-bars .radial-bar {
-    width: 50%;
-    height: 170px;
-    margin-bottom: 10px;
-    position: relative;
-}
-.radial-bars .radial-bar svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-90deg);
-    width: 120px;
-    height: 160px;
-}
-.radial-bars .radial-bar .progress-bar {
-    stroke-width: 10;
-    stop-color: black;
-    fill: transparent;
-    stroke-dasharray: 502;
-    stroke-dashoffset: 502;
-    stroke-linecap: round;
-    animation: animate-bar 1s linear forwards;
-}
-@keyframes animate-bar {
-    100% {
-        stroke-dashoffset: -1;
-    }
-}
-.path {
-    stroke-width: 10;
-    stroke: var(--main-color);
-    fill: transparent;
-    stroke-dasharray: 502;
-    stroke-dashoffset: 502;
-    stroke-linecap: round;
-}
-.path-1 {
-    animation: animate-path1 1s 1s linear forwards;
-}
-.path-2 {
-    animation: animate-path2 1s 1s linear forwards;
-}
-.path-3 {
-    animation: animate-path3 1s 1s linear forwards;
-}
-.path-4 {
-    animation: animate-path4 1s 1s linear forwards;
 }
 
-@keyframes animate-path1 {
-    100% {
-        stroke-dashoffset: 50;
-    }
-}
-@keyframes animate-path2 {
-    100% {
-        stroke-dashoffset: 175;
-    }
-}
-@keyframes animate-path3 {
-    100% {
-        stroke-dashoffset: 125;
-    }
-}
-@keyframes animate-path4 {
-    100% {
-        stroke-dashoffset: 75;
-    }
-}
-.radial-bar .percentage {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 17px;
-    font-weight: 500;
-    animation: showText 0.5s 1s linear forwards;
-    opacity: 0;
-}
-.radial-bar .text {
-    width: 100%;
-    position: absolute;
+/* Soft Skills Strip */
+.soft-skills-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.02);
+    border: .15rem solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.6rem;
+    padding: 2.2rem 2rem;
     text-align: center;
-    left: 50%;
-    bottom: -5px;
-    transform: translateX(-50px);
-    font-size: 17px;
-    font-weight: 500;
-    animation: showText 0.5s 1s linear forwards;
-    opacity: 0;
+}
+
+.soft-skills-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.soft-skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.soft-skill-pills span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.4rem;
+    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.04);
+    border: .1rem solid rgba(255, 255, 255, 0.12);
+    padding: 0.7rem 1.5rem;
+    border-radius: 3rem;
+    transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.soft-skill-pills span i {
+    color: var(--main-color);
+    font-size: 1.6rem;
+}
+
+.soft-skill-pills span:hover {
+    border-color: var(--main-color);
+    color: #fff;
 }
 
 /* =========================================
@@ -550,7 +475,7 @@ span {
    ========================================= */
 .portfolio {
     background: var(--second-bg-color);
-    padding: 8rem 9% 8rem;
+    padding: 5rem 9% 6rem;
     min-height: auto;
 }
 
@@ -558,7 +483,7 @@ span {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
     gap: 3rem;
-    align-items: stretch; /* Keeps all cards matching in height */
+    align-items: stretch;
 }
 
 .project-card {
@@ -602,7 +527,7 @@ span {
     padding: 2.4rem 2.2rem;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Fills remaining space so buttons align cleanly */
+    flex-grow: 1;
     text-align: left;
 }
 
@@ -611,7 +536,7 @@ span {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: .15rem;
-    color: #08e0e7; /* Accent color matching reference or use var(--main-color) */
+    color: #08e0e7;
     margin-bottom: .8rem;
 }
 
@@ -635,7 +560,7 @@ span {
     display: flex;
     flex-wrap: wrap;
     gap: .8rem;
-    margin-top: auto; /* Pushes the tags & buttons to bottom together */
+    margin-top: auto;
     margin-bottom: 2.4rem;
 }
 
@@ -676,7 +601,6 @@ span {
     text-decoration: none;
 }
 
-/* Primary Button (Crimson / Pink like reference) */
 .proj-btn.primary {
     background: #1d9ab3;
     color: #fff;
@@ -688,7 +612,6 @@ span {
     box-shadow: 0 0 1.8rem rgba(22, 17, 18, 0.6);
 }
 
-/* Secondary Button (Ghost outline) */
 .proj-btn.secondary {
     background: transparent;
     border: .15rem solid rgba(255, 255, 255, 0.3);
@@ -704,17 +627,20 @@ span {
 .contact h2 {
     margin-bottom: 3rem;
 }
+
 .contact form {
     max-width: 70rem;
     margin: 1rem auto;
     text-align: center;
     margin-bottom: 3rem;
 }
+
 .contact form .input-box {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
 .contact form .input-box input,
 .contact form textarea {
     width: 100%;
@@ -725,12 +651,15 @@ span {
     border-radius: .8rem;
     margin: .7rem 0;
 }
+
 .contact form .input-box input {
     width: 49%;
 }
+
 .contact form textarea {
     resize: none;
 }
+
 .contact form .btn {
     margin-top: 2rem;
     cursor: pointer;
@@ -745,9 +674,11 @@ span {
     padding: 2rem 9%;
     background-color: var(--second-bg-color);
 }
+
 .footer-text p {
     font-size: 1.6rem;
 }
+
 .footer-iconTop a {
     display: inline-flex;
     justify-content: center;
@@ -757,9 +688,11 @@ span {
     border-radius: .8rem;
     transition: .5s ease;
 }
+
 .footer-iconTop a:hover {
     box-shadow: 0 0 1rem var(--main-color);
 }
+
 .footer-iconTop a i {
     font-size: 2.4rem;
     color: var(--second-bg-color);
@@ -771,16 +704,19 @@ span {
         padding: 2rem 3%;
     }
     section {
-        padding: 10rem 3% 2rem;
+        padding: 5rem 3% 2rem;
     }
     .about {
-        padding: 8rem 3% 5rem;
+        padding: 5rem 3% 5rem;
     }
     .services {
-        padding-bottom: 7rem;
+        padding: 5rem 3% 0;
     }
     .portfolio {
-        padding-bottom: 7rem;
+        padding: 5rem 3% 5rem;
+    }
+    .skills-section {
+        padding: 5rem 3% 5rem;
     }
     .contact {
         min-height: auto;
@@ -801,8 +737,8 @@ span {
         width: 100%;
         padding: 1rem 3%;
         background: var(--bg-color);
-        border-top: .1rem solid rgba(0,0,0,.2);
-        box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
         display: none;
     }
     .navbar.active {
@@ -867,49 +803,49 @@ span {
 
 /* Education Card Details */
 .services-box .edu-institute {
-  font-size: 1.5rem;
-  color: var(--main-color);
-  font-weight: 500;
-  margin: 0.5rem 0 1rem;
+    font-size: 1.5rem;
+    color: var(--main-color);
+    font-weight: 500;
+    margin: 0.5rem 0 1rem;
 }
 
 .services-box .edu-desc {
-  font-size: 1.4rem;
-  color: #94a3b8;
-  line-height: 1.6;
-  margin: 0 0 1.5rem;
+    font-size: 1.4rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin: 0 0 1.5rem;
 }
 
 .edu-coursework {
-  margin: 1.5rem 0 2rem;
-  text-align: left;
+    margin: 1.5rem 0 2rem;
+    text-align: left;
 }
 
 .edu-coursework h4 {
-  font-size: 1.4rem;
-  color: var(--text-color);
-  margin-bottom: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .course-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
 }
 
 .course-tags span {
-  font-size: 1.2rem;
-  background: rgba(0, 238, 255, 0.08);
-  border: 1px solid rgba(0, 238, 255, 0.25);
-  color: var(--text-color);
-  padding: 0.4rem 1rem;
-  border-radius: 2rem;
-  transition: 0.3s ease;
+    font-size: 1.2rem;
+    background: rgba(0, 238, 255, 0.08);
+    border: 1px solid rgba(0, 238, 255, 0.25);
+    color: var(--text-color);
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    transition: 0.3s ease;
 }
 
 .course-tags span:hover {
-  background: rgba(0, 238, 255, 0.2);
-  border-color: var(--main-color);
+    background: rgba(0, 238, 255, 0.2);
+    border-color: var(--main-color);
 }
